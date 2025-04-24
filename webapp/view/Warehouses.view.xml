@@ -1,0 +1,15 @@
+<mvc:View
+  controllerName="inventory.controller.Warehouses"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="Warehouses">
+    <List
+      items="{path: '/Warehouses'}"
+      mode="SingleSelectMaster"
+      selectionChange="onWarehouseSelect">
+      <StandardListItem
+        title="{location}"
+        type="Navigation"/>
+    </List>
+  </Page>
+</mvc:View>
