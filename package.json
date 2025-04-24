@@ -1,0 +1,17 @@
+{
+    "name": "my.inventory.inventoryui",
+    "scripts": {
+        "build": "mbt build --mtar my.inventory.inventoryui.mtar",
+        "build:workspaces": "npm run build --workspaces --if-present",
+        "deploy": "cf deploy mta_archives/my.inventory.inventoryui.mtar --retries 0",
+        "lint": "npm run lint --workspaces --if-present",
+        "ui5lint": "npm run ui5lint --workspaces --if-present",
+        "start:inventory": "npm start --workspace inventory"
+    },
+    "dependencies": {
+        "mbt": "^1"
+    },
+    "workspaces": [
+        "inventory"
+    ]
+}
