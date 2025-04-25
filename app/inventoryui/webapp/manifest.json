@@ -1,0 +1,169 @@
+{
+    "_version": "1.60.0",
+    "sap.app": {
+        "id": "inventory",
+        "type": "application",
+        "dataSources": {
+        "mainService": {
+            "uri": "/odata/v4/inventory/",
+            "type": "OData",
+            "settings": {
+            "odataVersion": "4.0"
+            }
+        }
+        },
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap-ux/fiori-freestyle-writer:basic",
+            "version": "0.21.10"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.128.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "": {
+                "dataSource": "mainService"
+            }
+            },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "inventory.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "Home",
+                    "pattern": "",
+                    "target": ["TargetHome"]
+                  },
+                {
+                    "name": "RouteMainView",
+                    "pattern": "products",
+                    "target": [
+                        "TargetMainView"
+                    ]
+                },
+                {
+                    "name": "Warehouses",
+                    "pattern": "warehouses",
+                    "target": "TargetWarehouses"
+                  },
+                  {
+                    "name": "WarehouseDetail",
+                    "pattern": "warehouses/{id}",
+                    "target": "TargetWarehouseDetail"
+                  },
+                  {
+                    "name": "ProductDetail",
+                    "pattern": "products/{id}",
+                    "target": "TargetProductDetail"
+                  },
+                  {
+                    "name": "StockMovementList",
+                    "pattern": "stockmovements",
+                    "target": "TargetStockMovementList"
+                  },
+                  {
+                    "name": "StockMovementCreate",
+                    "pattern": "stockmovements/create",
+                    "target": "TargetStockMovementCreate"
+                  },
+                  {
+                    "name": "StockMovementDetail",
+                    "pattern": "stockmovements/{movement_id}",
+                    "target": "TargetStockMovementDetail"
+                  }
+            ],
+            "targets": {
+                "TargetMainView": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "MainView",
+                    "viewName": "MainView"
+                },
+                "TargetHome": {
+                "viewName": "Home",
+                "viewId": "Home",
+                "viewType": "XML"
+                },
+                "TargetWarehouses": {
+                "viewName": "Warehouses",
+                "viewLevel": 1
+                },
+                "TargetWarehouseDetail": {
+                "viewName": "WarehouseDetail",
+                "viewLevel": 2
+                },
+                "TargetProductDetail": {
+                    "viewName": "ProductDetail",
+                    "viewLevel": 2
+                },
+                "TargetStockMovementList": {
+                    "viewName": "StockMovementList",
+                    "viewLevel": 1
+                },
+                "TargetStockMovementCreate": {
+                    "viewName": "StockMovementCreate",
+                    "viewLevel": 2
+                },
+                "TargetStockMovementDetail": {
+                    "viewName": "StockMovementDetail",
+                    "viewLevel": 2
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "inventory.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        }
+    }
+}

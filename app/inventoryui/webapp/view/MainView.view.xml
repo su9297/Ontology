@@ -1,0 +1,34 @@
+<mvc:View
+  controllerName="inventory.controller.MainView"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <App id="app">
+    <pages>
+      <Page title="{i18n>appTitle}">
+        <Table
+          id="productTable"
+          items="{
+            path: '/Products',
+            parameters: { '$expand': 'warehouse' }
+          }">
+          <columns>
+            <Column><Text text="Name"/></Column>
+            <Column><Text text="Quantity"/></Column>
+            <Column><Text text="Warehouse"/></Column>
+          </columns>
+          <items>
+            <ColumnListItem
+              type="Navigation"
+              press=".onProductSelect">
+              <cells>
+                <Text text="{name}"/>
+                <Text text="{quantity}"/>
+                <Text text="{warehouse/location}"/>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

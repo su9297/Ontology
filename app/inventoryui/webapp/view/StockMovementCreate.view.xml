@@ -1,0 +1,23 @@
+<mvc:View
+  controllerName="inventory.controller.StockMovementCreate"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+  <Page title="입고·출고 등록">
+    <VBox class="sapUiResponsiveMargin">
+      <ComboBox id="cmbProduct" items="{/Products}" selectedKey="{newMovement>/product_ID}">
+      <core:Item key="{id}" text="{name}"/>
+    </ComboBox>
+    <ComboBox id="cmbWarehouse" items="{/Warehouses}" selectedKey="{newMovement>/warehouse_ID}">
+      <core:Item key="{id}" text="{location}"/>
+    </ComboBox>
+    <Input id="inputQty" type="Number" value="{newMovement>/quantity_change}"/>
+    <ComboBox id="cmbType" selectedKey="{newMovement>/event_type}">
+      <core:Item key="INBOUND" text="입고"/>
+      <core:Item key="OUTBOUND" text="출고"/>
+    </ComboBox>
+    <DateTimePicker id="dtpOccurred" value="{newMovement>/occurred_at}"/>
+      <Button text="등록" type="Emphasized" press=".onSave"/>
+    </VBox>
+  </Page>
+</mvc:View>

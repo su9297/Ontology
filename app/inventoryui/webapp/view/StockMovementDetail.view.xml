@@ -1,0 +1,21 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout.form"
+  controllerName="inventory.controller.StockMovementDetail">
+  <Page title="이력 상세">
+    <layout:SimpleForm
+      editable="false"
+      labelSpanL="3"
+      columnsL="2"
+      class="sapUiResponsiveMargin">
+      <Label text="ID"/><Text text="{movement_id}"/>
+      <Label text="제품"/><Text text="{product/name}"/>
+      <Label text="창고"/><Text text="{warehouse/location}"/>
+      <Label text="수량 변경"/><Text text="{quantity_change}"/>
+      <Label text="유형"/><Text text="{event_type}"/>
+      <Label text="발생 일시"/><Text text="{occurred_at}"/>
+    </layout:SimpleForm>
+  </Page>
+</mvc:View>
+

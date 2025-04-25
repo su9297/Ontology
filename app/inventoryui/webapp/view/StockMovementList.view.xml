@@ -1,0 +1,40 @@
+<mvc:View
+  controllerName="inventory.controller.StockMovementList"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="재고 이동 이력">
+      <Toolbar>
+        <Button text="조회" icon="sap-icon://search" press=".onSearch"/>
+        <ToolbarSpacer/>
+        <Button text="입고/출고 등록" icon="sap-icon://create" press=".onCreate"/>
+      </Toolbar>
+    <Table
+      id="mvmtTable"
+      inset="false"
+      items="{
+        path: '/StockMovement',
+        parameters: { '$expand':'product,warehouse' }
+      }">
+      <columns>
+        <Column><Text text="ID"/></Column>
+        <Column><Text text="제품"/></Column>
+        <Column><Text text="창고"/></Column>
+        <Column><Text text="수량변화"/></Column>
+        <Column><Text text="유형"/></Column>
+        <Column><Text text="일시"/></Column>
+      </columns>
+      <items>
+        <ColumnListItem type="Active" press=".onSelect">
+          <cells>
+            <Text text="{movement_id}"/>
+            <Text text="{product/name}"/>
+            <Text text="{warehouse/location}"/>
+            <Text text="{quantity_change}"/>
+            <Text text="{event_type}"/>
+            <Text text="{occurred_at}"/>
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+  </Page>
+</mvc:View>

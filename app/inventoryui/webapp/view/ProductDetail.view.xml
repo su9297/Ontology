@@ -1,0 +1,17 @@
+<mvc:View
+  controllerName="inventory.controller.ProductDetail"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="{name}">
+    <VBox class="sapUiSmallMargin">
+      <Label text="Name"/>
+      <Input value="{name}" enabled="false"/>
+      <Label text="Quantity"/>
+      <Input value="{quantity}" liveChange=".onQuantityChange"/>
+      <Button
+        text="Save"
+        type="Emphasized"
+        press=".onSave"/>
+    </VBox>
+  </Page>
+</mvc:View>

@@ -1,0 +1,14 @@
+<mvc:View
+  controllerName="inventory.controller.Home"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="지능형 재고 관리 시스템">
+    <VBox class="sapUiMediumMargin">
+      <Button text="창고 목록" press=".onNavWarehouses"/>
+      <Button text="제품 목록" press=".onNavProducts"/>
+      <Button text="입/출고 이력" press=".onNavStockMovemnet"/>
+      <Button text="온톨로지 시각화" press=".onNavOntology"/>
+      <Button text="알림/주문 이력" press=".onNavLogs"/>
+    </VBox>
+  </Page>
+</mvc:View>
