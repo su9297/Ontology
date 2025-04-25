@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "inventory",
     "version": "0.0.1",
     "private": true,
@@ -29,4 +30,32 @@
         "opa5": "fiori run --open test/opaTests.qunit.html",
         "wdi5": "wdio run ./webapp/test/e2e/\\wdio.conf.js"
     }
+=======
+  "name": "my-inventory",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^8",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@cap-js/cds-types": "^0.10.0"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+  "watch": ["inventory"],
+  "requires": {
+    "db": {
+      "kind": "sqlite",
+      "credentials": { "database": "db.sqlite" }
+    }
+  }
+}
+>>>>>>> 5129f4bfa099320739df8fbb41ad101b7d3f4d10
 }
