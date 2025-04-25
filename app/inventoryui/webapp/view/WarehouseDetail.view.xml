@@ -11,7 +11,7 @@
       <items>
         <ColumnListItem>
           <cells>
-            <Text text="{name}"/>
+            <Text text="{product/name}"/>
             <Text text="{quantity}"/>
           </cells>
         </ColumnListItem>

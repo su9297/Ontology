@@ -18,7 +18,6 @@ sap.ui.define(
         const sId = oEvent.getParameter("arguments").id;
         this.getView().bindElement({
           path: `/Products(${sId})`,
-          parameters: { $expand: "warehouse" },
         });
       },
 

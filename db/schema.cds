@@ -6,20 +6,17 @@ entity Warehouses {
 }
 
 entity Products {
-    key id           : Integer;
-        name         : String(100);
-        quantity     : Integer;
-        warehouse_ID : Integer;
-        warehouse    : Association to Warehouses
-                           on warehouse_ID = warehouse.id;
+    key id       : Integer;
+        name     : String(100);
+        quantity : Integer;
+
 }
 
 entity Inventory {
-    key inventory_id : Integer;
-        product_ID   : Integer;
-        warehouse_ID : Integer;
-        quantity     : Integer;
-        safety_stock : Integer;
+    key product_ID   : Integer;
+    key warehouse_ID : Integer;
+        quantity     : Integer @default: 0;
+        safety_stock : Integer @default: 10;
         product      : Association to Products
                            on product_ID = product.id;
         warehouse    : Association to Warehouses

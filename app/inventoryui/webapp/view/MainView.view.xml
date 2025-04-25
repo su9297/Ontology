@@ -8,13 +8,11 @@
         <Table
           id="productTable"
           items="{
-            path: '/Products',
-            parameters: { '$expand': 'warehouse' }
+            path: '/Products'
           }">
           <columns>
             <Column><Text text="Name"/></Column>
             <Column><Text text="Quantity"/></Column>
-            <Column><Text text="Warehouse"/></Column>
           </columns>
           <items>
             <ColumnListItem
@@ -23,7 +21,6 @@
               <cells>
                 <Text text="{name}"/>
                 <Text text="{quantity}"/>
-                <Text text="{warehouse/location}"/>
               </cells>
             </ColumnListItem>
           </items>

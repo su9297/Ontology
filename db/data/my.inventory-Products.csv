@@ -1,11 +1,11 @@
-id,name,quantity,warehouse_ID
-1,Product A,100,1
-2,Product B,50,2
-3,Product C,75,3
-4,Product D,200,4
-5,Product E,0,5
-6,Product F,150,4
-7,Product G,20,3
-8,Product H,180,2
-9,Product I,5,1
-10,Product J,60,2
+id,name,quantity
+1,Product A,100
+2,Product B,50
+3,Product C,75
+4,Product D,200
+5,Product E,0
+6,Product F,150
+7,Product G,20
+8,Product H,180
+9,Product I,50
+10,Product J,60

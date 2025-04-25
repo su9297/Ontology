@@ -1,4 +1,3 @@
-// WarehouseDetail.controller.js
 sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
@@ -26,10 +25,11 @@ sap.ui.define(
         oTable.unbindItems();
 
         oTable.bindItems({
-          path: "/Products",
+          path: "/Inventory",
           template: this._oProductTemplate.clone(),
           filters: [new Filter("warehouse_ID", FilterOperator.EQ, sId)],
           parameters: {
+            $expand: "product",
             $$operationMode: "Server",
           },
         });

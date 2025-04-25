@@ -1,6 +1,6 @@
-inventory_id,product_ID,warehouse_ID,quantity,safety_stock
-1,1,1,80,20
-2,2,2,45,10
+product_ID,warehouse_ID,quantity,safety_stock
+1,1,80,20
+2,2,45,10
 3,3,3,70,15
 4,4,4,190,50
 5,5,5,0,10
