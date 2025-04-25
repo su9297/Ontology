@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+node_modules/
+dist/
+.scp/
+.env
+Makefile*.mta
+mta_archives
+mta-*
+resources
+archive.zip
+.*_mta_build_tmp
+.DS_Store
+=======
 # CAP my-inventory
 _out
 *.db
@@ -32,3 +45,4 @@ mta_archives/
 
 # @cap-js/cds-typer
 @cds-models
+>>>>>>> 5129f4bfa099320739df8fbb41ad101b7d3f4d10
